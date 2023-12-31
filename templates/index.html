@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- <link href="css/style.css" rel="stylesheet"> -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+</head>
+<body>
+
+<h2>Our Employees:</h2>
+<div class="page page-top">
+    <div class="wrap">
+        <h2> OUR TEAM </h2>
+        <div class="team">
+            <div class="team-item">
+                {% for d in employee %}
+                <img src="{{ d.image.url }}" width="100" height="100">
+                <div>
+                    <p>{{ d.name }}</p>
+                    <p> {{ d.position }} </p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
